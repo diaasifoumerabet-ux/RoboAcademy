@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>حاسبة ضرائب روبلوكس | RoboAcademy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- شريط التنقل العلوي -->
+    <!--#include file="includes/header.html" -->
+
+    <main>
+        <section class="calculator-section">
+            <h1>حاسبة ضرائب روبلوكس</h1>
+            <form id="taxForm" class="calculator-form">
+                <label>المبلغ بالروبوكس</label>
+                <input type="number" id="robuxAmount" placeholder="أدخل عدد الروبوكس" required>
+                <button type="submit">احسب</button>
+            </form>
+            <div id="result" class="calculator-result"></div>
+        </section>
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <!--#include file="includes/footer.html" -->
+    <script src="js/calculator.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
