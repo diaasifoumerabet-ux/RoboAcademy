@@ -2,14 +2,16 @@ body {
     direction: rtl;
     font-family: 'Cairo', Arial, sans-serif;
     margin: 0;
-    background: #fafbfc;
+    background: linear-gradient(180deg, #eaf1fb 0%, #fafbfc 100%);
     color: #222;
+    transition: background 1s;
 }
 header, footer {
-    background: #23395d;
+    background: linear-gradient(90deg,#23395d 0%, #2667ff 100%);
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    box-shadow: 0 2px 10px #23395d33;
 }
 nav ul {
     padding: 0; margin: 0;
@@ -18,14 +20,36 @@ nav ul {
     list-style: none;
     gap: 25px;
 }
-a { color: #2667ff; text-decoration: none; }
-a.cta, .btn-secondary {
-    background: #2667ff;
-    color: #fff !important;
-    padding: 12px 24px;
-    border-radius: 8px;
+nav ul li {
+    position: relative;
+    transition: transform 0.2s;
+}
+nav ul li:hover {
+    transform: translateY(-5px) scale(1.07);
+}
+nav ul li a {
+    color: #fff;
     font-weight: bold;
-    display: inline-block;
+    font-size: 18px;
+    padding: 7px 12px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+nav ul li a:hover, nav ul li a:focus {
+    background: #2667ff;
+    color: #fff;
+    box-shadow: 0 4px 20px #2667ff33;
+}
+button#nav-toggle {
+    background: #23395d;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: none;
 }
 .main-content {
     max-width: 950px;
@@ -34,10 +58,16 @@ a.cta, .btn-secondary {
 }
 .hero {
     padding: 40px 0;
-    background: #eaf1fb;
+    background: linear-gradient(110deg, #eaf1fb 60%, #ffffff 100%);
     text-align: center;
     border-radius: 14px;
     margin-bottom: 28px;
+    box-shadow: 0 6px 26px #23395d1c;
+    animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 .features {
     display: flex;
@@ -50,51 +80,106 @@ a.cta, .btn-secondary {
     background: #fff;
     padding: 20px 15px;
     border-radius: 10px;
-    box-shadow: 0 0 10px #e9e9e9;
+    box-shadow: 0 0 18px #e9e9e9;
     margin-bottom: 16px;
+    transition: box-shadow 0.4s, transform 0.2s;
+    cursor: pointer;
 }
-.services, .about {
+.feature:hover {
+    box-shadow: 0 0 32px #2667ff33;
+    transform: scale(1.04) rotate(-1deg);
+    background: linear-gradient(120deg, #eaf1fb 85%, #2667ff13 100%);
+}
+a.cta, .btn-secondary {
+    background: linear-gradient(90deg,#2667ff 0%, #23395d 100%);
+    color: #fff !important;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 2px 8px #2667ff1c;
+    transition: background 0.4s, box-shadow 0.2s;
+}
+a.cta:hover, .btn-secondary:hover {
+    background: #23395d;
+    box-shadow: 0 6px 22px #2667ff40;
+}
+.services, .about, .calculator-section, .login-section {
     max-width: 800px;
     margin: 0 auto;
     padding: 24px;
 }
 .service-box {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     background: #fff;
-    padding: 14px;
-    border-radius: 8px;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 0 16px #e9e9e9;
+    transition: box-shadow 0.2s, background 0.2s;
 }
-.calculator-section {
-    max-width: 400px;
+.service-box:hover {
+    box-shadow: 0 0 32px #2667ff22;
+    background: #eaf1fb;
+}
+.calculator-section, .login-section {
+    max-width: 420px;
     margin: 40px auto;
     background: #fff;
     border-radius: 14px;
-    box-shadow: 0 0 10px #eee;
+    box-shadow: 0 0 24px #23395d12;
     padding: 32px 20px;
     text-align: center;
+    animation: fadeIn 1.2s;
 }
-.calculator-form input {
+.calculator-form input, .login-form input {
     padding: 9px 12px;
     font-size: 1.2em;
     margin-top: 16px;
     margin-bottom: 16px;
-    border: 1px solid #bbbbbb;
+    border: 1.4px solid #bbbbbb;
     border-radius: 6px;
     width: 80%;
     text-align: center;
+    border-bottom: 3px solid #2667ff33;
+    transition: border 0.3s;
 }
-.calculator-form button {
-    background: #2667ff;
+.calculator-form input:focus, .login-form input:focus {
+    border: 1.4px solid #2667ff;
+    border-bottom: 3px solid #23395d;
+}
+.calculator-form button, .login-form button {
+    background: linear-gradient(90deg,#2667ff 0%, #23395d 100%);
     color: #fff;
     border: none;
-    padding: 11px 28px;
+    padding: 12px 36px;
     font-size: 1.1em;
-    border-radius: 7px;
+    border-radius: 9px;
     cursor: pointer;
+    transition: background 0.4s;
+}
+.calculator-form button:hover, .login-form button:hover {
+    background: #23395d;
 }
 .calculator-result {
     margin-top: 18px;
     font-weight: bold;
     color: #1b6cb4;
     font-size: 1.1em;
+}
+.login-message {
+    margin-top: 16px;
+    color: #2667ff;
+    font-weight: bold;
+}
+@media (max-width: 900px) {
+    .main-content, .services, .about, .calculator-section, .login-section { max-width: 98vw; padding: 8px;}
+    .features { flex-direction: column; }
+}
+@media (max-width: 600px) {
+    .hero { padding: 18px 2px; }
+    .features { gap: 8px; }
+    nav ul { flex-direction: column; gap: 11px;}
+    header, footer { padding: 11px 0; }
+    body { font-size: 16px; }
+    button#nav-toggle { display: block;}
 }
