@@ -1,0 +1,100 @@
+body {
+    direction: rtl;
+    font-family: 'Cairo', Arial, sans-serif;
+    margin: 0;
+    background: #fafbfc;
+    color: #222;
+}
+header, footer {
+    background: #23395d;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+nav ul {
+    padding: 0; margin: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 25px;
+}
+a { color: #2667ff; text-decoration: none; }
+a.cta, .btn-secondary {
+    background: #2667ff;
+    color: #fff !important;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+}
+.main-content {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+.hero {
+    padding: 40px 0;
+    background: #eaf1fb;
+    text-align: center;
+    border-radius: 14px;
+    margin-bottom: 28px;
+}
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+}
+.feature {
+    flex: 1 0 200px;
+    background: #fff;
+    padding: 20px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #e9e9e9;
+    margin-bottom: 16px;
+}
+.services, .about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+}
+.service-box {
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 14px;
+    border-radius: 8px;
+}
+.calculator-section {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 0 10px #eee;
+    padding: 32px 20px;
+    text-align: center;
+}
+.calculator-form input {
+    padding: 9px 12px;
+    font-size: 1.2em;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #bbbbbb;
+    border-radius: 6px;
+    width: 80%;
+    text-align: center;
+}
+.calculator-form button {
+    background: #2667ff;
+    color: #fff;
+    border: none;
+    padding: 11px 28px;
+    font-size: 1.1em;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.calculator-result {
+    margin-top: 18px;
+    font-weight: bold;
+    color: #1b6cb4;
+    font-size: 1.1em;
+}
