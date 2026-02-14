@@ -1,0 +1,14 @@
+@media (max-width: 900px) {
+    .main-content, .services, .about {
+        max-width: 98vw;
+        padding: 8px;
+    }
+    .features { flex-direction: column; }
+}
+@media (max-width: 600px) {
+    .hero { padding: 18px 2px; }
+    .features { gap: 8px; }
+    nav ul { flex-direction: column; gap: 11px;}
+    header, footer { padding: 11px 0; }
+    body { font-size: 16px; }
+}
